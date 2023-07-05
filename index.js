@@ -17,7 +17,7 @@ const withdrawFromOKX = async(addressTo) => {
         await withdrawalOKX(coin, amountToken, addressTo, fee, chain, apiSecret, apiKey, apiPassphrase).then((res) => {
             if (res.data.msg == '') {
                 console.log(res.data.data);
-                log('info', 'green', `Successful Withdraw ${amountToken}${coin} transaction id: ${res.data.data}, toAddress: ${addressTo}`);
+                log('info', 'green', `Successful Withdraw ${res.data.data[0].amt} ${coin} transaction id: ${res.data.data[0].wdId}, toAddress: ${addressTo}`);
             } else {
                 log('error', 'red', `Error transaction: ${res.data.msg}, toAddress: ${addressTo}`);
             }
