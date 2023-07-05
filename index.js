@@ -23,7 +23,7 @@ const withdrawFromOKX = async(addressTo) => {
             }
         });
     } catch (err) {
-        log('error', 'red', err.message);
+        log('error', 'red', err);
         return;
     }
 }
